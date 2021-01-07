@@ -1,0 +1,21 @@
+DELETE,/all,null,{\"message\":\"Uspješno obrisan sadržaj datoteka!\"}
+GET,/predmeti,null,[]
+POST,/predmet,{\"naziv\":\"DM\"},{\"message\":\"Uspješno dodan predmet!\"}
+POST,/predmet,{\"naziv\":\"WT\"},{\"message\":\"Uspješno dodan predmet!\"}
+POST,/predmet,{\"naziv\":\"WT\"},{\"message\":\"Naziv predmeta postoji!\"}
+GET,/predmeti,null,[{\"naziv\":\"DM\"},{\"naziv\":\"WT\"}]
+GET,/aktivnosti,null,[]
+POST,/aktivnost,{\"naziv\":\"DM\",\"tip\":\"predavanje\",\"pocetak\":\9\,\"kraj\":\12\,\"dan\":\"Ponedjeljak\"},{\"message\":\"Uspješno dodana aktivnost!\"}
+POST,/aktivnost,{\"naziv\":\"DM\",\"tip\":\"predavanje\",\"pocetak\":\9\,\"kraj\":\12\,\"dan\":\"Ponedjeljak\"},{\"message\":\"Aktivnost nije validna!\"}
+POST,/aktivnost,{\"naziv\":\"ASP\",\"tip\":\"predavanje\",\"pocetak\":\12\,\"kraj\":\9\,\"dan\":\"Ponedjeljak\"},{\"message\":\"Aktivnost nije validna!\"}
+POST,/aktivnost,{\"naziv\":\"ASP\",\"tip\":\"predavanje\",\"pocetak\":\9.8\,\"kraj\":\12\,\"dan\":\"Ponedjeljak\"},{\"message\":\"Aktivnost nije validna!\"}
+POST,/aktivnost,{\"naziv\":\"ASP\",\"tip\":\"predavanje\",\"pocetak\":\9.5\,\"kraj\":\12.3\,\"dan\":\"Ponedjeljak\"},{\"message\":\"Aktivnost nije validna!\"}
+GET,/aktivnosti,null,[{\"naziv\":\"DM\",\"tip\":\"predavanje\",\"pocetak\":\9\,\"kraj\":\12\,\"dan\":\"Ponedjeljak\"}]
+GET,/predmet/DM/aktivnost,null,[{\"naziv\":\"DM\",\"tip\":\"predavanje\",\"pocetak\":\9\,\"kraj\":\12\,\"dan\":\"Ponedjeljak\"}]
+DELETE,/aktivnost/WT,null,{\"message\":\"Greška - aktivnost nije obrisana!\"}
+DELETE,/aktivnost/DM,null,{\"message\":\"Uspješno obrisana aktivnost!\"}
+POST,/aktivnost,{\"naziv\":\"WT\",\"tip\":\"predavanje\",\"pocetak\":\9\,\"kraj\":\12\,\"dan\":\"Ponedjeljak\"},{\"message\":\"Uspješno dodana aktivnost!\"}
+GET,/predmet/WT/aktivnost,null,[{\"naziv\":\"WT\",\"tip\":\"predavanje\",\"pocetak\":\9\,\"kraj\":\12\,\"dan\":\"Ponedjeljak\"}]
+DELETE,/predmet/ASP,null,{\"message\":\"Greška - predmet nije obrisan!\"}
+DELETE,/predmet/DM,null,{\"message\":\"Uspješno obrisan predmet!\"}
+DELETE,/all,null,{\"message\":\"Uspješno obrisan sadržaj datoteka!\"}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE>Planiranje Nastavnik</TITLE>
+<link rel="stylesheet" href=../planiranjeNastavnikStil.css>
+<link rel="stylesheet" href="../navigationBar.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</HEAD>
+<BODY onload="loudaj()"> 
+  <ul class="naviBar">
+    <li><a href="../spirala2rasporedi.html">Raspored</a></li>
+    <li><a href="../aktivnost.html">Aktivnosti</a></li>
+    <li><a href="../planiranjeNastavnik.html">Nastavnik plan</a></li>
+    <li><a href="../podaciStudent.html">Student podaci</a></li>
+  </ul>
+    <h1>Plan Nastavnika</h1>
+  <div>
+      <form id="forma">
+          <ul>
+              <li>
+                <label>Naziv predmeta:</label>
+              </li>
+              <li>
+                <input type="text" id="predmet" name="naziv">
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <br><label>Tip:</label>
+            </li>
+            <li>
+                <select id="lista" name="tip">
+                    <option>Predavanje</option>
+                    <option>Vježbe</option>
+                    </select>
+          </li>
+        </ul>
+        <ul>
+            <li>
+              <br> <label>Vrijeme početka:</label>
+            </li>
+            <li>
+                <input type="number" id="vrijemeP" name="pocetak" step="0.5" min="8">          
+            </li>
+        </ul>
+        <ul>
+          <li>
+            <br><label>Vrijeme kraja:</label>
+                     
+        </li>
+          <li>
+            <input type="number" id="vrijemeK" name="kraj" step="0.5" max='21'> 
+        </li>
+      </ul>
+      <ul>
+        <li>
+           <br> <label>Dan u sedmici:</label>
+        </li>
+        <li>
+            <select id="lista2" name="dan">
+                <option>Ponedjeljak</option>
+                <option>Utorak</option>
+                <option>Srijeda</option>
+                <option>Četvrtak</option>
+                <option>Petak</option>
+                </select>
+      </li>
+    </ul>
+    <br>
+    <button type="submit" class="wrapper">Dodaj</button>
+      </form>
+      <h2 id="poruka-servera">
+
+      </h2>
+  </div>
+  <script src="planiranje.js"></script>
+</BODY>
+</HTML>
