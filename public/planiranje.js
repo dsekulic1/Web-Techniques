@@ -9,12 +9,12 @@ $('#forma').on('submit', f => {
 })
 function loudaj() {
     $.ajax({
-        url: linkServera + '/predmeti', success: function (odgovor) {
+        url: linkServera + '/v2/predmet', success: function (odgovor) {
             predmetiNiz = odgovor;
         }
     });
     $.ajax({
-        url: linkServera + '/aktivnosti', success: function (odgovor) {
+        url: linkServera + '/v2/aktivnost', success: function (odgovor) {
             aktivnostiNiz = odgovor;
         }
     });
@@ -24,7 +24,7 @@ function dodajAktivnost() {
     const aktivnostNova = {};
     function kreiraj(akt) {
         return $.post({
-            url: linkServera + '/aktivnost',
+            url: linkServera + '/z3/aktivnost',
             data: akt,
         }).done((odgovor) => {
             $('#poruka-servera').html(odgovor.message);
@@ -41,14 +41,14 @@ function dodajAktivnost() {
     const PostojiPredmet = predmetiNiz.findIndex(pred => pred.naziv === aktivnostNova.naziv) !== -1;
     if (!PostojiPredmet) {
         $.post({
-            url: linkServera + '/predmet',
+            url: linkServera + '/v2/predmet',
             data: { naziv: aktivnostNova.naziv },
         }).done(() => {
             kreiraj(aktivnostNova).done(() => {
                 predmetiNiz.push({ naziv: aktivnostNova.naziv });
             }).fail(() => {
                 $.ajax({
-                    url: `/predmet/${aktivnostNova.naziv}`,
+                    url: `/v2/predmet/${aktivnostNova.naziv}`,
                     type: 'DELETE',
                     success: function () {
                         $('#poruka-servera').html("Aktivnost nije validna!");

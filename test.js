@@ -8,6 +8,7 @@ const fs = require('fs');
 let zahtjevi = ["GET", "POST", "DELETE"];
 let testovi = fs.readFileSync("testniPodaci.txt", 'utf8').split(/\r?\n/);
 testovi.forEach((test) => {
+   
     test = test.replace(/\\/gi, "");
     let obj = {};
     if (!zahtjevi.includes(test.split(",")[0])) obj = { zahjev: "", root: "", in: "", out: "" };
@@ -64,6 +65,7 @@ testovi.forEach((test) => {
         });
     }
     else if (obj.zahjev == "DELETE") {
+        console.log(obj);
         it(obj.zahjev + obj.root, function (done) {
             chai.request(server).delete(obj.root)
                 .end((error, res) => {

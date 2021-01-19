@@ -15,10 +15,12 @@
     "express": "^4.17.1",
     "htmlencode": "0.0.4",
     "mocha": "^8.2.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5",
     "sync-request": "^6.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.7"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE>Planiranje Nastavnik</TITLE>
+<link rel="stylesheet" href=../planiranjeNastavnikStil.css>
+<link rel="stylesheet" href="../navigationBar.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</HEAD>
+<BODY onload="load()"> 
+  <div>
+      <form id="forma">
+          <ul>
+              <li>
+                <label>Studenti:</label>
+              </li>
+              <li>
+                <textarea id="studenti" name="studenti" rows="6"></textarea>
+            </li>
+          </ul>
+
+          <ul>
+            <li>
+              <br><label>Grupa:</label>
+            </li>
+            <li>
+                <select id="groups" name="groups"> </select>
+          </li>
+        </ul>
+    <br>
+    <button type="submit">Dodaj</button>
+      </form>
+      <h2 id="poruka-servera">
+
+      </h2>
+  </div>
+  <script src="studentiAjax.js"></script>
+</BODY>
+</HTML>
